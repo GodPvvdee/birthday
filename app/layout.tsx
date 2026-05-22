@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Quicksand, Dancing_Script, Cormorant_Garamond } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import FloatingHearts from "@/components/FloatingHearts";
@@ -67,6 +68,7 @@ export default function RootLayout({
           </div>
           <main className="relative z-10 flex flex-1 flex-col">{children}</main>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
