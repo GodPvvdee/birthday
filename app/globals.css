@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff5f9;
+  --foreground: #4a154b;
+  --pink-50: #fff0f6;
+  --pink-100: #ffe0ec;
+  --pink-200: #ffc2d8;
+  --pink-300: #ff9ec0;
+  --pink-400: #ff75a8;
+  --pink-500: #ff4d8d;
+  --purple-200: #e0c8ff;
+  --purple-300: #c8a8ff;
+  --purple-400: #ab84ff;
+  --purple-500: #8b5cf6;
+  --rose-glow: 255, 182, 213;
+  --purple-glow: 200, 168, 255;
+}
+
+[data-theme="dark"] {
+  --background: #1a0b2e;
+  --foreground: #ffe4f0;
+  --pink-50: #2a1339;
+  --pink-100: #3a1d4a;
+  --pink-200: #4a2865;
+  --rose-glow: 255, 119, 168;
+  --purple-glow: 167, 139, 250;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-pink-soft: var(--pink-100);
+  --color-pink-glow: var(--pink-300);
+  --color-pink-deep: var(--pink-500);
+  --color-purple-soft: var(--purple-200);
+  --color-purple-glow: var(--purple-400);
+  --font-sans: var(--font-quicksand);
+  --font-display: var(--font-dancing);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-quicksand), system-ui, sans-serif;
+  min-height: 100%;
+  overflow-x: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(var(--rose-glow), 0.35), transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(var(--purple-glow), 0.35), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(var(--rose-glow), 0.15), transparent 60%);
+  background-attachment: fixed;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-dancing), cursive;
+  }
+  .font-serif-r {
+    font-family: var(--font-cormorant), serif;
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 10px 40px -10px rgba(255, 105, 180, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  }
+  [data-theme="dark"] .glass {
+    background: rgba(60, 30, 80, 0.45);
+    border: 1px solid rgba(255, 200, 230, 0.15);
+    box-shadow:
+      0 10px 40px -10px rgba(167, 139, 250, 0.35),
+      0 0 0 1px rgba(255, 200, 230, 0.08) inset;
+  }
+  .glow-pink {
+    box-shadow:
+      0 0 24px rgba(255, 105, 180, 0.45),
+      0 0 60px rgba(255, 105, 180, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .glow-purple {
+    box-shadow:
+      0 0 24px rgba(171, 132, 255, 0.5),
+      0 0 60px rgba(171, 132, 255, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #ff4d8d 0%, #c084fc 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-gradient-soft {
+    background: linear-gradient(135deg, #ff75a8 0%, #ab84ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 24px rgba(255, 105, 180, 0.45),
+      0 0 60px rgba(255, 105, 180, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 36px rgba(255, 105, 180, 0.6),
+      0 0 90px rgba(255, 105, 180, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+::selection {
+  background: rgba(255, 105, 180, 0.3);
+  color: inherit;
 }

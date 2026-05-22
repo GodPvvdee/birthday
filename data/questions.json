@@ -1,0 +1,90 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "If your perfect birthday started with one thing, what would it be?",
+      "emoji": "☀️",
+      "options": [
+        "🎂 Cake",
+        "😴 More sleep",
+        "☀️ Fresh air & adventure",
+        "🛍️ Shopping"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": 2,
+      "question": "Which outfit feels most correct for the mystery plan?",
+      "emoji": "👗",
+      "options": [
+        "👗 Fancy dress",
+        "🩱 Swimsuit",
+        "🏌️ Cute sporty fit",
+        "🧥 Pajamas"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": 3,
+      "question": "What kind of energy are we bringing?",
+      "emoji": "✨",
+      "options": [
+        "💃 Party chaos",
+        "🧘 Relaxing vibes",
+        "🏆 Competitive but cute",
+        "🎬 Movie marathon"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": 4,
+      "question": "Which emoji combo feels suspiciously specific?",
+      "emoji": "🕵️‍♀️",
+      "options": [
+        "🍿🎥",
+        "🍣🍷",
+        "🏌️☀️🏔️",
+        "🛏️📱"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": 5,
+      "question": "What time do you think your surprise begins?",
+      "emoji": "⏰",
+      "options": [
+        "🌅 7am",
+        "🕚 11am",
+        "🌇 6pm",
+        "🌙 Midnight"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": 6,
+      "question": "Where are we going?",
+      "emoji": "📍",
+      "options": [
+        "🏙️ Downtown",
+        "🏔️ Mt Bogd",
+        "✈️ Paris",
+        "🛒 CU"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "wrongMessages": [
+    "Hmmmm nope 😝",
+    "You should know this babe 💕",
+    "Try again my love 🥺",
+    "So close, but not quite 💗",
+    "Are you even paying attention? 😘"
+  ],
+  "rightMessages": [
+    "Yes! That's my girl 💖",
+    "Of course you knew! 🥰",
+    "Perfect, just like you ✨",
+    "You're getting warmer… 🔥",
+    "I knew you'd get it! 😍"
+  ]
+}
