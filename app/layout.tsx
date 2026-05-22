@@ -27,12 +27,12 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Birthday My Love ❤️",
+  title: "Happy Birthday My Bubi ❤️",
   description:
-    "A little something I built just for you — a romantic journey through our memories with a quiz, surprises, and a love letter. Happy Birthday, my love.",
+    "A little something I built just for you — a romantic journey through our memories with a quiz, surprises, and a love letter. Happy Birthday, my bubi.",
   keywords: ["birthday", "love", "romantic", "surprise", "quiz"],
   openGraph: {
-    title: "Happy Birthday My Love ❤️",
+    title: "Happy Birthday My Bubi ❤️",
     description: "A romantic interactive birthday surprise.",
     type: "website",
   },

@@ -1,21 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import confetti from "canvas-confetti";
-import GlowButton from "./GlowButton";
 import PhotoGallery from "./PhotoGallery";
 import Countdown from "./Countdown";
-import LoveLetterModal from "./LoveLetterModal";
 
-const HEADLINE = "Happy Birthday My Love";
-
-const PARAGRAPHS = [
-  "If I had to make a list of the best things that ever happened to me, you would be every line — and then I'd run out of paper.",
-  "You have this way of making the whole world softer. Coffee tastes better. Songs hit deeper. Tuesdays feel like Fridays. None of it makes any sense without you.",
-  "I love you in the loud, fireworks sort of way. And I love you in the quiet, doing-dishes-together sort of way. I want every version of both.",
-  "Today is your day. But honestly — every day with you already feels a little bit like mine. So thank you for sharing it with me. 💕",
-];
+const HEADLINE = "Happy Birthday My Bubi";
 
 const REVEAL = {
   what: "We're going golfing",
@@ -24,8 +15,6 @@ const REVEAL = {
 };
 
 export default function SurpriseScreen() {
-  const [open, setOpen] = useState(false);
-
   useEffect(() => {
     const colors = ["#ff75a8", "#ab84ff", "#ffc2d8", "#c8a8ff"];
     const fire = () =>
@@ -89,29 +78,10 @@ export default function SurpriseScreen() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 0.7 }}
-        className="mx-auto mt-10 max-w-2xl space-y-5"
-      >
-        {PARAGRAPHS.map((p, i) => (
-          <motion.p
-            key={i}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.2 + i * 0.25 }}
-            className="font-serif-r text-lg italic leading-relaxed text-pink-800 dark:text-pink-50 sm:text-xl"
-          >
-            {p}
-          </motion.p>
-        ))}
-      </motion.div>
-
-      <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 2.8, duration: 0.7, type: "spring", stiffness: 140, damping: 18 }}
-        className="mt-14"
+        transition={{ delay: 2, duration: 0.7, type: "spring", stiffness: 140, damping: 18 }}
+        className="mt-12"
       >
         <div className="glass relative overflow-hidden rounded-3xl px-6 py-10 text-center sm:px-12">
           <motion.div
@@ -161,7 +131,7 @@ export default function SurpriseScreen() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3.1, duration: 0.7 }}
+        transition={{ delay: 2.4, duration: 0.7 }}
         className="mt-14"
       >
         <PhotoGallery />
@@ -170,28 +140,11 @@ export default function SurpriseScreen() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3.3, duration: 0.7 }}
-        className="mt-12"
+        transition={{ delay: 2.7, duration: 0.7 }}
+        className="mt-12 mb-4"
       >
         <Countdown />
       </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3.6, duration: 0.7 }}
-        className="mt-14 flex flex-col items-center gap-3"
-      >
-        <GlowButton variant="purple" onClick={() => setOpen(true)}>
-          <span className="text-xl">💌</span>
-          Open Your Surprise
-        </GlowButton>
-        <p className="text-xs text-pink-500/80">
-          something I wrote, just for you
-        </p>
-      </motion.div>
-
-      <LoveLetterModal open={open} onClose={() => setOpen(false)} />
     </div>
   );
 }

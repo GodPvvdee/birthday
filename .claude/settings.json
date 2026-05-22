@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --no-src-dir --no-turbopack --import-alias \"@/*\" --eslint --use-npm --yes)"
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --no-src-dir --no-turbopack --import-alias \"@/*\" --eslint --use-npm --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(git rm *)",
+      "Bash(git remote *)",
+      "Bash(git restore *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(grep -rE \"icon\\\\.svg|rel.{0,5}icon\" .next/server/app/index.html)"
     ]
   }
 }

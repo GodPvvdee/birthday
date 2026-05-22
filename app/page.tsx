@@ -5,7 +5,7 @@ import Link from "next/link";
 import GlowButton from "@/components/GlowButton";
 import { useState } from "react";
 
-const message = "Happy Birthday, My Love";
+const message = "Happy Birthday, My Bubi";
 
 export default function Home() {
   const [easterEgg, setEasterEgg] = useState(0);
@@ -94,7 +94,7 @@ export default function Home() {
             </GlowButton>
           </Link>
           <p className="text-xs text-pink-400/80">
-            6 questions • a surprise reveal • all my love 💕
+            6 questions • a surprise reveal • all my bubi 💕
           </p>
         </motion.div>
 
